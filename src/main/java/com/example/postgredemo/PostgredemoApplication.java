@@ -11,18 +11,12 @@ import javax.sql.DataSource;
 
 @SpringBootApplication
 @Log
-public class PostgredemoApplication implements CommandLineRunner {
+public class PostgredemoApplication {
 
-	private final DataSource dataSource;
-	public PostgredemoApplication(final DataSource dataSource) {this.dataSource=dataSource;}
+
 	public static void main(String[] args) {
 		SpringApplication.run(PostgredemoApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) {
-		log.info("DataSource: "+dataSource.toString());
-		final JdbcTemplate restTemplate = new JdbcTemplate(dataSource);
-		restTemplate.execute("select 1");
-	}
+
 }

@@ -9,28 +9,26 @@ public class TestDataUtil {
     public static Author createTestAuthor() {
         return Author.builder()
                 .age(80)
-                .id(1L)
                 .name("John Doe")
                 .build();
     }
     public static Author createTestAuthor2() {
         return Author.builder()
                 .age(76)
-                .id(5L)
                 .name("Ege Bagcilar")
                 .build();
     }
 
-    public static Book createTestBook() {
+    public static Book createTestBook(final Author author) {
         return Book.builder()
-                .authorID(1L)
+                .author(author)
                 .isbn("1F69")
                 .title("1984")
                 .build();
     }
-    public static Book createTestBook2() {
+    public static Book createTestBook2(final Author author) {
         return Book.builder()
-                .authorID(5L)
+                .author(author)
                 .isbn("5T90")
                 .title("To Kill The Mockingbird")
                 .build();
